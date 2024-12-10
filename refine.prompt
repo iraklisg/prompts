@@ -1,0 +1,42 @@
+name: Refine
+description: Refine the question to be more clear, specific, and actionable
+---
+<prompt>
+  <workflow>
+    <step name="instruction_analysis">
+      <input>{{{input}}}</input>
+      <analyze>
+        - Identify core requirements
+        - Highlight ambiguities or gaps
+        - Understand and summarize the original intent
+      </analyze>
+    </step>
+
+    <step name="clarification">
+      <task>
+        - List significant assumptions made during interpretation
+        - Address potential areas requiring user input
+      </task>
+    </step>
+
+    <step name="refinement">
+      <guidelines>
+        <rule>Eliminate ambiguity and redundancy</rule>
+        <rule>Add relevant details while maintaining brevity</rule>
+        <rule>Ensure actionable and clear instructions</rule>
+        <rule>Consider common and edge cases</rule>
+        <rule>Preserve original intent while enhancing clarity</rule>
+      </guidelines>
+    </step>
+  </workflow>
+
+  <output_template>
+    ## Refined Instruction:
+    [Improved instruction]
+
+    ### Key Assumptions and Reasoning:
+    - Significant assumptions with explanations
+    - Limitations or uncertainties, if any
+    - Edge case considerations
+  </output_template>
+</prompt>
